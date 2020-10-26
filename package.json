@@ -1,0 +1,16 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "engine": {
+    "node": "14.11.0"
+  },
+  "main": "index.js",
+  "author": "Hillary Wallace",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hillary26121/hangman.git"
+  },
+  "dependencies": {
+    "readline-sync": "^1.4.10"
+  }
+}
