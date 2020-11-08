@@ -21,22 +21,30 @@ chosenWord.split('').forEach( (character)=>{
 });
 console.log(dashes);
 
-let userGuess = prompt.question("");
-let guessPosition = chosenWord.indexOf(userGuess);
-if(guessPosition === -1){
-    console.log(`No ${userName}, ${userGuess} is not a letter. Try again`);
-} else {
-    //Set letter
-    dashes = dashes.map( (dashOrLetter, index)=>{
-        if(chosenWord[index] === userGuess){
+//loop begins
+let i = 0;
+//   while( dashes.includes("_") || i < 7){ 
+    while(dashes.includes("_") && i < 7){ 
+    let userGuess = prompt.question("");
+    let guessPosition = chosenWord.indexOf(userGuess);
+    if(guessPosition === -1){
+        console.log(`No ${userName}, ${userGuess} is not a letter. Try again`);
+        i++;
+    } else {
+        //Set letter
+        dashes = dashes.map( (dashOrLetter, index)=>{
+            if(chosenWord[index] === userGuess){
             return chosenWord[index];
-        } else {
-            return dashOrLetter;
-        }
-    })
+            } else {
+                return dashOrLetter;
+            }
+        })
+      
+      
     //join and display dashes to user
-    console.log(dashes.join(' ') );
-}
+        console.log(dashes.join(' ') );
+    }
+  }
 
 
 
