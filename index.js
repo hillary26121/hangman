@@ -1,4 +1,5 @@
-const wordBank = require("./word-bank.json");
+// const wordBank = require("./word-bank.json");
+const wordBank = ['apple'];
 const prompt = require('readline-sync');
 
 let startGame= prompt.question('Welcome to hangman! To exit the game: Press ctrl+c ');
@@ -12,12 +13,49 @@ while(!userName){
 console.log(`Hey ${userName}! Thanks for playing. Let's get started. \nEnter your first letter!`)
 
 let chosenWord = wordBank[Math.floor(Math.random() * wordBank.length)];
-let dashes = "";
+let dashes = [];
 
 chosenWord.split('').forEach( (character)=>{
-    dashes = `${dashes} _ `
+    dashes.push(`_`); 
+   
 });
 console.log(dashes);
+
+let userGuess = prompt.question("");
+let guessPosition = chosenWord.indexOf(userGuess);
+if(guessPosition === -1){
+    console.log(`No ${userName}, ${userGuess} is not a letter. Try again`);
+} else {
+    //Set letter
+    dashes = dashes.map( (dashOrLetter, index)=>{
+        if(chosenWord[index] === userGuess){
+            return chosenWord[index];
+        } else {
+            return dashOrLetter;
+        }
+    })
+    //join and display dashes to user
+    console.log(dashes.join(' ') );
+}
+
+
+
+
+
+
+
+
+
+// let remainingLetters = chosenWord;
+// while(remainingLetters > 0){
+//     console.log(hi);
+// }
+
+
+// let userGuess = "";
+// while(userGuess !== chosenWord){
+//     userGuess = prompt.question(dashes);
+// }
 
 
 
