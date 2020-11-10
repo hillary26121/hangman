@@ -7,5 +7,5 @@ You can guess up to SIX incorrect letters** before the entire 'hangman' is displ
 Play as many rounds as you like, and your win stats will appear after each round.
 When you get tired of playing, just press 'Ctrl + c' to quit the game.
 
-*You must enter a letter for it to be a valid guess. Special characters, numbers, and more than one letter per guess will not count against you.
-* *If you accidentally guess the same letter twice, it will not count against you.
+* *You must enter a letter for it to be a valid guess. Special characters, numbers, and more than one letter per guess will not count against you.
+* **If you accidentally guess the same letter twice, it will not count against you.
